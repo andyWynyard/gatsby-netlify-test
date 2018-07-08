@@ -1,10 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import 'normalize.css';
+
+import styles from './index.module.css';
 
 const liStyle = {
-  border: '1px solid rebeccapurple',
+  border: '1px solid red',
   display: 'inline-block',
-  width: '25%'
+  backgroundColor: '#eee'
 };
 
 const linkStyle = {
@@ -13,7 +16,7 @@ const linkStyle = {
 
 export default ({ children }) => {
   return (
-    <div style={{ margin: '0 auto', maxWidth: 800, backgroundColor: '#eee' }}>
+    <div className={styles.wrapper}>
       <ul>
         <li style={liStyle}>
           <Link style={linkStyle} to="/">
@@ -21,18 +24,18 @@ export default ({ children }) => {
           </Link>
         </li>
         <li style={liStyle}>
-          <Link style={linkStyle} to="/">
-            Blog Index
+          <Link style={linkStyle} to="/about/">
+            About
           </Link>
         </li>
         <li style={liStyle}>
-          <Link style={linkStyle} to="/">
-            Placeholder
+          <Link to="/technologies/" style={linkStyle}>
+            Technologies
           </Link>
         </li>
         <li style={liStyle}>
-          <Link style={linkStyle} to="/">
-            Placeholder
+          <Link style={linkStyle} to="/contact/">
+            Contact
           </Link>
         </li>
       </ul>
