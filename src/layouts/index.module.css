@@ -1,37 +1,41 @@
-.wrapper {
-  margin: 3rem auto;
-  max-width: 800xp;
+.menuWrapper {
+  margin: 0 auto;
+  background-color: white;
+}
+
+.bodyWrapper {
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.menu {
   background-color: rebeccapurple;
-}
-
-.user {
-  display: flex;
-  align-items: center;
-  margin: 0 auto 12px auto;
-}
-
-.user:last-child {
-  margin-bottom: 0;
-}
-
-.avatar {
-  flex: 0 0 96px;
-  width: 96px;
-  height: 96px;
+  width: 100%;
   margin: 0;
+  text-align: center;
 }
 
-.description {
-  flex: 1;
-  margin-left: 18px;
-  padding: 12px;
+.menuItem {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 20%;
+  height: 100%;
+  display: inline-block;
 }
 
-.username {
-  margin: 0 0 12px 0;
-  padding: 0;
+.menuLink {
+  padding: 3px 7%;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px;
+  /* width: 100%; */
+  text-decoration: none;
+  color: white
 }
 
-.excerpt {
-  margin: 0;
+.menuLink:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: rebeccapurple;
 }

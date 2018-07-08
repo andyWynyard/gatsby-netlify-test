@@ -2,45 +2,48 @@ import React from 'react';
 import Link from 'gatsby-link';
 import 'normalize.css';
 
+import Footer from './footer';
+
 import styles from './index.module.css';
 
-const liStyle = {
-  border: '1px solid red',
-  display: 'inline-block',
-  backgroundColor: '#eee'
-};
-
-const linkStyle = {
-  textDecoration: 'none'
-};
-
-export default ({ children }) => {
+export default ({ children, data }) => {
   return (
-    <div className={styles.wrapper}>
-      <ul>
-        <li style={liStyle}>
-          <Link style={linkStyle} to="/">
-            Home
+    <div className={styles.menuWrapper}>
+      <h1>{data.site.siteMetadata.title}</h1>
+      <ul className={styles.menu}>
+        <li className={styles.menuItem}>
+          <Link className={styles.menuLink} to="/">
+            HOME
           </Link>
         </li>
-        <li style={liStyle}>
-          <Link style={linkStyle} to="/about/">
-            About
+        <li className={styles.menuItem}>
+          <Link className={styles.menuLink} to="/about/">
+            ABOUT
           </Link>
         </li>
-        <li style={liStyle}>
-          <Link to="/technologies/" style={linkStyle}>
-            Technologies
+        <li className={styles.menuItem}>
+          <Link className={styles.menuLink} to="/technologies/">
+            TECH
           </Link>
         </li>
-        <li style={liStyle}>
-          <Link style={linkStyle} to="/contact/">
-            Contact
+        <li className={styles.menuItem}>
+          <Link className={styles.menuLink} to="/blog/">
+            BLOG
           </Link>
         </li>
       </ul>
-
-      {children()}
+      <div className={styles.bodyWrapper}>{children()}</div>
+      <Footer />
     </div>
   );
 };
+
+export const query = graphql`
+  query AboutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

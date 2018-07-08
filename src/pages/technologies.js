@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 export default () => (
   <div>
+    <h1>Test</h1>
     <p>Hello world from my second Gatsby page</p>
-    <Link to="/">back home</Link>
   </div>
 );
